@@ -1,0 +1,1534 @@
+{
+	"info": {
+		"_postman_id": "b98bb078-84de-4331-b937-0440d69d37b7",
+		"name": "PostMan Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39577305"
+	},
+	"item": [
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "Movie List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/genre/movie/list",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"genre",
+								"movie",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TV List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    if (jsonData.id) {\r",
+									"        var account_id = jsonData.id;\r",
+									"        console.log(\"Account ID:\", account_id);\r",
+									"        pm.collectionVariables.set(\"account_id\", account_id);\r",
+									"    } else {\r",
+									"        console.error(\"ID not found in the response\");\r",
+									"    }\r",
+									"} catch (error) {\r",
+									"    console.error(\"Error parsing JSON:\", error);\r",
+									"    console.log(\"Response Text:\", pm.response.text());\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    if (jsonData.id) {\r",
+									"        var account_id = jsonData.id;\r",
+									"        console.log(\"Account ID:\", account_id);\r",
+									"        pm.collectionVariables.set(\"account_id\", account_id);\r",
+									"    } else {\r",
+									"        console.error(\"ID not found in the response\");\r",
+									"    }\r",
+									"} catch (error) {\r",
+									"    console.error(\"Error parsing JSON:\", error);\r",
+									"    console.log(\"Response Text:\", pm.response.text());\r",
+									"}\r",
+									";"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authenticity_token\": \"msP85KIa4z5M3uTV3_BNNR_PE7hFK_a_jeFAIijhrNg=\",\r\n    \"username\":\"team.8\",\r\n    \"password\":\"technostudy\"\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.themoviedb.org/login",
+							"protocol": "https",
+							"host": [
+								"www",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Favourite",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"Before Request\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"media_type\": \"movie\",\r\n  \"media_id\": 550,\r\n  \"favorite\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}//favorite",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add WatchList",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"media_type\":\"movie\",\"media_id\":11,\"watchlist\":true}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}//watchlist",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"",
+								"watchlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Favourite Movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}/favorite/movies",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"favorite",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Favourite TV",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}/favorite/tv",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"favorite",
+								"tv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rated movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}/rated/movies",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"rated",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rated TV",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}/rated/tv",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"rated",
+								"tv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WatchList Movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}//watchlist/movies",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"",
+								"watchlist",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WatchList tV",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/account/{{account_id}}//watchlist/tv",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{account_id}}",
+								"",
+								"watchlist",
+								"tv"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie Lists",
+			"item": [
+				{
+					"name": "Now PLaying",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/now_playing",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"now_playing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Popular",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/popular",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top rated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/top_rated",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"top_rated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upcoming",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/upcoming",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"upcoming"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/search/movie?query=Inception",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"search",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Inception",
+									"description": "Inception"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TV",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/search/tv?query=Doctor",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"search",
+								"tv"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Doctor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Person",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/search/person?query=Angelina Jolie",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"search",
+								"person"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Angelina Jolie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Keyword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"After Request: Response\");\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/search/movie?query=kdrama",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"search",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "kdrama"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Response Body:\", pm.response.json());\r",
+									"\r",
+									"// Parse the response JSON\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"// Extract the movie ID from the response\r",
+									"var movie_id = 3;\r",
+									"\r",
+									"// Log the movie ID to ensure it's extracted\r",
+									"console.log(\"Movie ID:\", movie_id);\r",
+									"\r",
+									"// Set the movie_id as a collection variable for later use\r",
+									"pm.collectionVariables.set(\"movie_id\", movie_id);\r",
+									"\r",
+									"// Add a test to check if the status code is 201\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/{{movie_id}}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"{{movie_id}}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Response Body:\", pm.response.json());\r",
+									"\r",
+									"// Parse the response JSON\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"// Extract the movie ID from the response\r",
+									"var movie_id = jsonData.id;\r",
+									"\r",
+									"// Log the movie ID to ensure it's extracted\r",
+									"console.log(\"Movie ID:\", movie_id);\r",
+									"\r",
+									"// Set the movie_id as a collection variable for later use\r",
+									"pm.collectionVariables.set(\"movie_id\", movie_id);\r",
+									"\r",
+									"// Add a test to check if the status code is 201\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/{{movie_id}}/lists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"{{movie_id}}",
+								"lists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add rating",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"console.log(\"Add Rating Response:\", pm.response.json());\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"value\":8.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/{{movie_id}}/rating",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"{{movie_id}}",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rating",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log(\"Delete Rating Response:\", pm.response.json());\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"value\":8.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/{{movie_id}}/rating",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"{{movie_id}}",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Log the response body\r",
+									"console.log(\"Response Body:\", pm.response.json());\r",
+									"\r",
+									"// Parse the response JSON\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"// Set the list ID (manually, since it's part of the URL path)\r",
+									"var list_id = 7107106;\r",
+									"\r",
+									"// Log the list ID to confirm\r",
+									"console.log(\"List ID:\", list_id);\r",
+									"\r",
+									"// Add the list_id as a collection variable for future use\r",
+									"pm.collectionVariables.set(\"list_id\", list_id);\r",
+									"\r",
+									"// Add a test to verify the response status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWU3YjQxMGNkZWRlNjdjYjI5NjJkNGY5ZDEyNmM4OCIsIm5iZiI6MTczMjM0NzEwMy42ODMwNDM1LCJzdWIiOiI2NzQxN2Q4YmFhYjcyMmJmYTdjOGRjYzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4Jv57B1HPKvZX3GrFEEVlNLkla_h4l2xeqT9uJY_buI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"media_id\": 18\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.themoviedb.org/3/list/{{list_id}}/add_item?session_id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"list",
+								"{{list_id}}",
+								"add_item"
+							],
+							"query": [
+								{
+									"key": "session_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "UserID",
+			"value": ""
+		},
+		{
+			"key": "account_id",
+			"value": ""
+		},
+		{
+			"key": "movie_id",
+			"value": ""
+		},
+		{
+			"key": "list_id",
+			"value": ""
+		}
+	]
+}
